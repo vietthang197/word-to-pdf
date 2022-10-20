@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  wordpdf:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: wordpdf
+    ports:
+      - "8086:8086"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - D:/pdf:/pdf
+    tty: true
